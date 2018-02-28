@@ -26,24 +26,25 @@ docker run  --name phoenix \
 
 Create a new project
 
-```shell
-docker exec -it phoenix mix phx.new hello
-```
+    $ docker exec -it phoenix mix phx.new hello
 
-Jump to folder of the project and change the owner  of the files and directory recursively
+We are all set! Go into your application by running:
 
-```shell
-cd hello \
-sudo chwon -R $USER:$USER .
-```
+    $ cd hello
 
-Update the configuration to connect the database_hello
+Change the owner:
 
-```shell
-vim config/dev.exs
-```
-Up webserver phoenix ***obs: -w /app/hello ***
+    $ sudo chwon -R $USER:$USER .
 
-```shell
- docker exec -w /app/hello -it phoenix mix phx.server
-```
+Then configure your database in config/dev.exs and run:
+
+    $ docker exec -w /app/hello -it mix ecto.create
+
+Start your Phoenix app with:
+
+    $  docker exec -w /app/hello -it phoenix mix phx.server
+
+You can also run your app inside IEx (Interactive Elixir) as:
+
+    $  docker exec -w /app/hello -it phoenix iex -S mix phx.server
+
