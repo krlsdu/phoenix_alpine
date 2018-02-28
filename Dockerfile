@@ -1,5 +1,7 @@
 FROM elixir:alpine
 
+MAINTAINER krlsdu <krlsdu@gmail.com>
+
 RUN apk update upgrade \
   && apk add bash \
   && apk add inotify-tools \
