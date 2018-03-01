@@ -48,3 +48,6 @@ You can also run your app inside IEx (Interactive Elixir) as:
 
     $ docker exec -w /app/hello -it phoenix iex -S mix phx.server
 
+# Example using docker-compose
+
+[![asciicast](https://asciinema.org/a/PCqwp3Mvlbqqh0ZlBLohrxMep.png)](https://asciinema.org/a/PCqwp3Mvlbqqh0ZlBLohrxMep)
