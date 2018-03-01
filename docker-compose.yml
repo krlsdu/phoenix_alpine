@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+    db:
+        image: postgres 
+        env_file: .env
+    web:
+        working_dir: /app/$MY_APP
+        image: krlsdu/phoenix_alpine
+        depends_on:
+            - db
+        ports:
+            - 4000:4000
+        volumes:
+            - .:/app/
